@@ -5,6 +5,7 @@ const { PORT = 5000 } = process.env;
 const express = require('express');
 const bodyParser = require('body-parser');
 const graphqlHttp = require('express-graphql');
+const voyagerMiddleware = require('graphql-voyager/middleware').express;
 
 // Dependencias
 const schema = require('./schema');
@@ -26,5 +27,6 @@ const middlewares = [
   GraphqlFX,
 ];
 
+app.use('/voyager', voyagerMiddleware({ endpointUrl: '/' }));
 app.use(middlewares);
 app.listen(PORT, listenCallback);

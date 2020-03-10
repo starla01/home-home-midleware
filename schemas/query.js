@@ -1,11 +1,11 @@
-const { GraphQLObjectType } = require("graphql");
+const { GraphQLObjectType } = require('graphql');
 
 module.exports = new GraphQLObjectType({
-  name: "Query",
-  description: "Metodos de consulta",
+  name: 'Query',
+  description: 'Metodos de consulta',
   fields: {
     viewer: {
-      type: require("./viewer")
-    }
-  }
+      type: require('./viewer'),
+    },
+  },
 });
